@@ -3,7 +3,10 @@ const instance = axios.create({
 
     baseURL: "http://localhost:8080/reactive",
 
-    headers: { "Content-Type": "application/json", },
+    headers: {
+
+        "Content-Type": "application/json",
+    },
 });
 
 function htmlizeResponse(response) {
@@ -30,9 +33,9 @@ async function getAllData() {
 
         resultElement.innerHTML = htmlizeResponse(result);
 
-    } catch (err) {
+    } catch (error) {
 
-        resultElement.innerHTML = htmlizeResponse(err);
+        resultElement.innerHTML = htmlizeResponse(error);
     }
 }
 
@@ -58,9 +61,9 @@ async function getDataById() {
 
             resultElement.innerHTML = htmlizeResponse(result);
 
-        } catch (err) {
+        } catch (error) {
 
-            resultElement.innerHTML = htmlizeResponse(err);
+            resultElement.innerHTML = htmlizeResponse(error);
         }
     }
 }
@@ -92,9 +95,9 @@ async function getDataByTitle() {
 
             resultElement.innerHTML = htmlizeResponse(result);
 
-        } catch (err) {
+        } catch (error) {
 
-            resultElement.innerHTML = htmlizeResponse(err);
+            resultElement.innerHTML = htmlizeResponse(error);
         }
     }
 }
@@ -123,9 +126,9 @@ async function postData() {
 
         resultElement.innerHTML = htmlizeResponse(result);
 
-    } catch (err) {
+    } catch (error) {
 
-        resultElement.innerHTML = htmlizeResponse(err);
+        resultElement.innerHTML = htmlizeResponse(error);
     }
 }
 
@@ -155,9 +158,9 @@ async function putData() {
 
         resultElement.innerHTML = htmlizeResponse(result);
 
-    } catch (err) {
+    } catch (error) {
 
-        resultElement.innerHTML = htmlizeResponse(err);
+        resultElement.innerHTML = htmlizeResponse(error);
     }
 }
 
@@ -179,9 +182,9 @@ async function deleteAllData() {
 
         resultElement.innerHTML = htmlizeResponse(result);
 
-    } catch (err) {
+    } catch (error) {
 
-        resultElement.innerHTML = htmlizeResponse(err);
+        resultElement.innerHTML = htmlizeResponse(error);
     }
 }
 
@@ -205,9 +208,9 @@ async function deleteDataById() {
 
         resultElement.innerHTML = htmlizeResponse(result);
 
-    } catch (err) {
+    } catch (error) {
 
-        resultElement.innerHTML = htmlizeResponse(err);
+        resultElement.innerHTML = htmlizeResponse(error);
     }
 }
 
