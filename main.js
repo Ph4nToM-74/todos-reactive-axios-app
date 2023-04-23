@@ -1,5 +1,5 @@
 
-const instance = axios.create({
+let instance = axios.create({
 
     baseURL: "http://localhost:8080/reactive",
 
@@ -11,8 +11,33 @@ const instance = axios.create({
 
 function htmlizeResponse(response) {
 
-    return `<div class="alert alert-secondary mt-2" role="alert"><pre>` +
-            JSON.stringify(response, null, 2) + "</pre></div>";
+    return `<div class="alert alert-secondary mt-3" role="alert"><pre>` +
+            JSON.stringify(response, null, 4) + "</pre></div>";
+}
+
+function linkReactiveApi() {
+
+    let resultElement = document.getElementById("linkResult");
+
+    resultElement.innerHTML = "";
+
+    const host = document.getElementById("get-host").value;
+    const port = document.getElementById("get-port").value;
+
+    if (host && port) {
+
+        instance = axios.create({
+
+            baseURL: "http://" + host + ":" + port + "/reactive",
+
+            headers: {
+
+                "Content-Type": "application/json",
+            },
+        });
+    }
+
+    resultElement.innerHTML = htmlizeResponse(instance.getUri());
 }
 
 async function getAllData() {
@@ -212,6 +237,11 @@ async function deleteDataById() {
 
         resultElement.innerHTML = htmlizeResponse(error);
     }
+}
+
+function clearLinkOutput() {
+
+    document.getElementById("linkResult").innerHTML = "";
 }
 
 function clearGetOutput() {

@@ -15,33 +15,57 @@
 
 <body>
 
-    <div class="container my-3" style="max-width: 600px">
+    <div class="container my-3" style="max-width: 650px">
 
         <h3>Codes of Ph4nToM - Axios Client</h3>
 
         <div class="card mt-3">
 
-            <div class="card-header">Todos GET Request</div>
+            <div class="card-header">Link Reactive Todos API</div>
 
             <div class="card-body">
 
                 <div class="input-group input-group-sm">
 
-                    <button class="btn btn-sm btn-primary" onclick="getAllData()">Get All</button>
+                    <button class="btn btn-sm btn-warning" onclick="clearLinkOutput()">Clear</button>
 
-                    <input class="form-control ml-2" id="get-id" placeholder="Id" type="text">
+                    <input class="form-control ml-2" id="get-host" placeholder="Host" type="text">
+                    <span class="ml-1 mr-1">:</span>
+                    <input class="form-control mr-2" id="get-port" placeholder="Port" type="text">
 
-                    <div class="input-group-append">
+                    <button class="btn btn-sm btn-success" onclick="linkReactiveApi()">Link</button>
+
+                </div>
+
+                <div id="linkResult"></div>
+
+            </div>
+
+        </div>
+
+        <div class="card mt-3">
+
+            <div class="card-header">Send GET Todos Request</div>
+
+            <div class="card-body">
+
+                <div class="input-group input-group-sm">
+
+                    <button class="btn btn-sm btn-primary mr-1" onclick="getAllData()">Get All</button>
+
+                    <input class="form-control ml-1" id="get-id" placeholder="Id" type="text">
+
+                    <div class="input-group-append mr-1">
                         <button class="btn btn-sm btn-primary" onclick="getDataById()">Get by Id</button>
                     </div>
 
-                    <input class="form-control ml-2" id="get-title" placeholder="Title" type="text">
+                    <input class="form-control ml-1" id="get-title" placeholder="Title" type="text">
 
-                    <div class="input-group-append">
+                    <div class="input-group-append mr-1">
                         <button class="btn btn-sm btn-primary" onclick="getDataByTitle()">Find by Title</button>
                     </div>
 
-                    <button class="btn btn-sm btn-warning ml-2" onclick="clearGetOutput()">Clear</button>
+                    <button class="btn btn-sm btn-warning ml-1" onclick="clearGetOutput()">Clear</button>
 
                 </div>
 
@@ -53,7 +77,7 @@
 
         <div class="card mt-3">
 
-            <div class="card-header">Todos POST Request</div>
+            <div class="card-header">Send POST Todos Request</div>
 
             <div class="card-body">
 
@@ -65,7 +89,7 @@
                     <input class="form-control" id="post-description" placeholder="Description" type="text">
                 </div>
 
-                <button class="btn btn-sm btn-primary" onclick="postData()">Post Data</button>
+                <button class="btn btn-sm btn-primary mr-1" onclick="postData()">Post Data</button>
                 <button class="btn btn-sm btn-warning" onclick="clearPostOutput()">Clear</button>
 
                 <div id="postResult"></div>
@@ -76,7 +100,7 @@
 
         <div class="card mt-3">
 
-            <div class="card-header">Todos PUT Request</div>
+            <div class="card-header">Send PUT Todos Request</div>
 
             <div class="card-body">
 
@@ -99,7 +123,7 @@
 
                 <div class="form-group mt-2">
                     <button class="btn btn-sm btn-primary" onclick="putData()">Update Data</button>
-                    <button class="btn btn-sm btn-warning" onclick="clearPutOutput()">Clear</button>
+                    <button class="btn btn-sm btn-warning ml-1" onclick="clearPutOutput()">Clear</button>
                 </div>
 
                 <div id="putResult"></div>
@@ -110,21 +134,21 @@
 
         <div class="card mt-3">
 
-            <div class="card-header">Todos DELETE Request</div>
+            <div class="card-header">Send DELETE Todos Request</div>
 
             <div class="card-body">
 
                 <div class="input-group input-group-sm">
 
-                    <button class="btn btn-sm btn-danger" onclick="deleteAllData()">Delete All</button>
+                    <button class="btn btn-sm btn-danger mr-1" onclick="deleteAllData()">Delete All</button>
 
-                    <input class="form-control ml-2" id="delete-id" placeholder="Id" type="text">
+                    <input class="form-control ml-1" id="delete-id" placeholder="Id" type="text">
 
-                    <div class="input-group-append">
+                    <div class="input-group-append mr-1">
                         <button class="btn btn-sm btn-danger" onclick="deleteDataById()">Delete by Id</button>
                     </div>
 
-                    <button class="btn btn-sm btn-warning ml-2" onclick="clearDeleteOutput()">Clear</button>
+                    <button class="btn btn-sm btn-warning ml-1" onclick="clearDeleteOutput()">Clear</button>
 
                 </div>
 

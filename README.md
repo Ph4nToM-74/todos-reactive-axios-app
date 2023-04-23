@@ -1,9 +1,7 @@
 # Todos Application
 
-This *application* is used to **manage** your *day-to-day* or even *long-term* **todos**!
-
-The **REST** *API* is **developed** using:
-* *Spring* Data **Reactive** & **WebFlux**;
+This *application* is **developed** using:
+* *Spring* **R2DBC** & **WebFlux** for *API*;
 * **PostgreSQL** for *database*;
 * **Maven** for *building*;
 * **Axios** for *consuming*;
@@ -32,11 +30,11 @@ P.S. For *production* purposes, only **Docker** is *sufficient*.
 
 ## Development
 
-The *database* can be **monitored** as follows:
+For **development** purposes, *follow* as below:
 
 ### Usage
 
-**Run** the following *command* for Docker **Container**:
+**Run** the Docker **Container** with this *command*:
 
 >docker run --detach --env POSTGRES_USER=dev-user --env POSTGRES_PASSWORD=dev-pass --env POSTGRES_DB=dev-todos --name dev-pgsql --publish 5432:5432 postgres:15.2-alpine
 
@@ -52,11 +50,11 @@ spring.r2dbc.password=dev-pass
 
 >mvn spring-boot:run
 
-Go to this *URL* to **use** the *application*:
+Go to this *URL* to **consume** the *API*:
 
 >http://localhost:8080/reactive/todos
 
-**Open** the "*index.html*" file to **consume** the API.
+**Open** the "*index.html*" file to **test** it.
 
 ### Monitoring
 
@@ -72,20 +70,21 @@ Go to this *URL* to **use** the *application*:
 
 ## Production
 
-The *application* can be **deployed** as follows:
-
+For **production** purposes, *follow* as below:
 
 ### Usage
 
-**Run** the following *command* for Docker **Compose**:
+**Run** the Docker **Compose** with this *command*:
 
 >docker-compose up
 
-Go to this *URL* to **use** the *application*:
+Go to this *URL* to **consume** the *API*:
 
 >http://localhost:6969/reactive/todos
 
-**Stop** the following *command* for Docker **Compose**:
+**Open** the "*index.html*" file to **check** it.
+
+**Stop** the Docker **Compose** with this *command*:
 
 >docker-compose down
 
